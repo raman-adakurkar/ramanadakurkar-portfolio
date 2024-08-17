@@ -1,0 +1,1265 @@
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Inter;
+        scrollbar-width: thin;
+        scroll-behavior: smooth;
+    }
+
+    .back-video {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        width: 100%;
+    }
+
+    .typing-container {
+        font-family: 'Courier New', Courier, monospace;
+        color: #BF00FF;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 20ch;
+        font-size: 54px;
+        font-weight: 800;
+        display: inline;
+    }
+
+    /* For WebKit browsers */
+    body::-webkit-scrollbar {
+        width: 8px;
+        /* Width of the vertical scrollbar */
+        height: 8px;
+        /* Height of the horizontal scrollbar */
+    }
+
+    body::-webkit-scrollbar-track {
+        background: #333;
+        /* Background of the scrollbar track */
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: #555;
+        /* Color of the scrollbar thumb */
+        border-radius: 10px;
+        /* Rounded corners */
+        border: 2px solid #333;
+        /* Padding around the thumb */
+    }
+
+    /* For Firefox */
+    body {
+        scrollbar-width: thin;
+        /* Makes the scrollbar thin */
+        scrollbar-color: #555 #333;
+        /* thumb color, track color */
+    }
+
+
+    .container {
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        height: 100vh;
+        /* Ensure the container takes full viewport height */
+    }
+
+
+
+    .section {
+        height: 100%;
+        width: 100%;
+        /* background-color: rgb(0, 0, 0); */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-snap-align: start;
+        height: 100vh;
+        /* Each section takes full viewport height */
+
+        .section-body {
+            width: calc(100% - 48px);
+            height: calc(100% - 48px);
+        }
+    }
+
+    #dashboard-section {
+        color: white;
+        font-size: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #navbar {
+        height: 10%;
+        width: 100%;
+    }
+
+    #desktop-content-body {
+        height: 90%;
+        width: 100%;
+        padding: 1px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #logo-section {
+        font-size: 32px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        margin-bottom: 4px;
+    }
+
+    #navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #menu-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 24px;
+        width: 20%;
+    }
+
+    #resume-download-button {
+        display: flex;
+        width: 124px;
+        height: 36px;
+        border: 2px solid #BF00FF;
+        border-radius: 25px;
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #resume-download-button:hover {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        border: none;
+        transition: background-color 0.3s ease-in-out;
+
+        #resume-download-button-image {
+            content: url(/ASSETS/ICONS/download_black_icon.png);
+        }
+    }
+
+    #resume-download-button-image {
+        margin-left: 8px;
+        width: 16px;
+    }
+
+    #contact-link {
+        font-size: 16px;
+        width: 124px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+    }
+
+    #contact-link:hover {
+        cursor: pointer;
+        background: white;
+        color: black;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    #greeting-text {
+        display: block;
+        font-size: 54px;
+        font-weight: 700;
+    }
+
+    #tag-line {
+        font-size: 28px;
+        font-weight: 600;
+        display: block;
+    }
+
+    #tag-line-second {
+        font-size: 24px;
+        font-weight: 400;
+        color: #6B6B6B;
+        display: block;
+    }
+
+    #desktop-content-body-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+    }
+
+    #dock {
+        width: 124px;
+        height: 36px;
+        background: #BF00FF;
+        border-radius: 25px;
+        margin: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: width 0.2s;
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+        font-family: system-ui;
+        font-weight: 600;
+        color: white;
+        font-size: 16px;
+    }
+
+    #dock:hover {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    #about-section {
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        color: #676767;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 72%;
+        text-align: center;
+    }
+
+    .text-highlight {
+        color: #BF00FF;
+        font-weight: 500;
+    }
+
+    #about-section-title {
+        font-size: 36px;
+        font-weight: 700;
+        margin-top: 8%;
+    }
+
+    #about-section-content {
+        font-size: 18px;
+        margin-top: 4%;
+    }
+
+    #experience-section {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow-x: scroll;
+        scrollbar-width: none;
+    }
+
+    #exp-info-bar {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        align-items: end;
+        color: white;
+        margin-top: 10%;
+    }
+
+    #exp-timeline-bar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    #exp-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #BF00FF;
+        font-weight: 700;
+        margin-left: 4%;
+        letter-spacing: 8px;
+        font-size: 24px;
+    }
+
+    .exp-year {
+        font-size: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: 500;
+        margin-right: 50px;
+        color: #676767;
+    }
+
+    .year-bubble-big {
+        width: 36px;
+        height: 36px;
+        background: white;
+        border-radius: 50px;
+        margin-bottom: 36px;
+        margin-top: 64px;
+        margin-left: 50px;
+        background: #676767;
+        z-index: 1;
+    }
+
+    .year-bubble-big:hover {
+        cursor: pointer;
+    }
+
+    .year-text-big {
+        margin-left: 50px;
+    }
+
+    .year-bubble-small {
+        width: 24px;
+        height: 24px;
+        background: white;
+        border-radius: 50px;
+        margin-bottom: 36px;
+        margin-top: 54px;
+        margin-left: 50px;
+        background: #676767;
+        z-index: 1;
+    }
+
+    .year-text-small {
+        margin-left: 50px;
+        font-size: 16px;
+    }
+
+    #timeline-bar-line {
+        height: 2px;
+        background: #bb00fa;
+        width: 200%;
+        position: absolute;
+        margin-left: 320px;
+    }
+
+    #coditas-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 236px;
+        margin-left: 176px;
+
+        img {
+            width: 175px;
+        }
+
+        span {
+            color: white;
+            letter-spacing: 1px;
+            font-weight: 500;
+            font-size: 14px;
+            width: 216px;
+        }
+    }
+
+    .exp-scroll-button {
+        width: 36px;
+        height: 36px;
+        opacity: 0.2;
+        z-index: 0;
+    }
+
+    #exp-nav-button {
+        position: absolute;
+        bottom: 0%;
+        display: flex;
+        justify-content: space-between;
+        width: 200px;
+        left: calc(50% - 100px);
+    }
+
+    #scroll-right {
+        margin-bottom: 24px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #scroll-left {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #scroll-right:hover,
+    #scroll-left:hover {
+        opacity: 1;
+        transform: scale(1.2);
+        box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+    }
+
+    .ssc,
+    .hsc,
+    .engineering {
+        font-size: 24px;
+        font-weight: 600;
+        color: #676767;
+    }
+
+    .banner {
+        position: absolute;
+        width: 300px;
+        height: 400px;
+        background: #1f1f1f;
+        border-radius: 25px;
+        margin-bottom: 64px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.25);
+        border: 1px solid #ffffff36;
+    }
+
+    .banner-image {
+        height: 40%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 25px 25px 0px 0px;
+        }
+    }
+
+    .banner-info {
+        height: 60%;
+        /* background: aliceblue; */
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .banner-title {
+        margin-top: 20px;
+        font-weight: 700;
+    }
+
+    .banner-institute-name {
+        font-weight: 700;
+        color: #bf00ff;
+        font-size: 18px;
+        margin-top: 16px;
+    }
+
+    .banner-branch-name {
+        font-size: 14px;
+        margin-top: 4px;
+        color: grey;
+        font-weight: 300;
+    }
+
+    .banner-timeline {
+        margin-top: 4px;
+        font-size: 14px;
+    }
+
+    .banner-percentage {
+        margin-top: 36px;
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    #ssc-banner {
+        display: flex;
+        margin-left: 500px;
+        display: none;
+        transition: fade-in 0.3s ease-in-out;
+    }
+
+
+    /* Skills Section */
+
+    #skills-section {
+        width: 90%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .skills-section-card {
+        height: 100%;
+        width: 30%;
+        background: #1F1F1F;
+        border-radius: 25px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s ease-in-out, opacity 0.3s;
+    }
+
+    .skills-section-card:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.25);
+        border: 1px solid #ffffff36;
+    }
+
+    .skills-header {
+        width: 90%;
+        height: 50%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .logo {
+        img {
+            width: 48px;
+        }
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #BF00FF;
+        margin-top: 24px;
+    }
+
+    .caption {
+        font-size: 16px;
+        text-align: center;
+        margin-top: 16px;
+        font-weight: 200;
+    }
+
+    .skills-body {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .skills-rating {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .skill-name {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: self-end;
+        margin-right: 10px;
+    }
+
+    .skill-name-text {
+        margin-top: 8px;
+    }
+
+    .skill-rate {
+        width: 100%;
+    }
+
+    .skill-rate-image {
+        margin-top: 8px;
+
+        img {
+            width: 75%;
+            height: 10px;
+        }
+    }
+
+    #contact-section {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #676767;
+        flex-direction: column;
+    }
+
+    #contact-title {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        font-size: 36px;
+        font-weight: 700;
+        width: 100%;
+        height: 30%;
+        margin-top: -40px;
+    }
+
+    #contact-message {
+        width: 66%;
+        height: 40%;
+        font-size: 24px;
+        text-align: center;
+        margin-top: 32px;
+    }
+
+    #contact-logos {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 25%;
+    }
+
+    .contact-logo {
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50px;
+        transition: transform 0.3s ease-in-out;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .contact-logo:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+    #contact-logos-dashboard {
+        height: 16%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 18%;
+    }
+
+    .contact-logo-dashboard {
+        width: 36px;
+        height: 36px;
+        background: white;
+        border-radius: 50px;
+        transition: transform 0.3s ease-in-out;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .contact-logo-dashboard:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+    /* Animations */
+
+    .slide-up {
+        animation: slideUp 1s ease-in-out;
+    }
+
+    .slide-down {
+        animation: slideDown 1s ease-in-out;
+    }
+
+    .slide-left {
+        animation: slideLeft 1s ease-in-out;
+    }
+
+    .slide-right {
+        animation: slideRight 1s ease-in-out;
+    }
+
+    .fade-out {
+        animation: fadeOut 1s ease-in-out;
+    }
+
+    .fade-in {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .fade-in-3s {
+        animation: fadeIn 3s ease-in-out;
+    }
+
+    .flip {
+        animation: flip 1s;
+    }
+
+    .zoom-in {
+        animation: zoomIn 1s ease-in-out;
+    }
+
+    .zoom-in-slow {
+        animation: zoomIn 3s ease-in-out;
+    }
+
+    .zoom-in-fade {
+        animation: zoomInFade 2s ease-in-out;
+    }
+
+    .bounce {
+        animation: bounce 1s infinite;
+    }
+
+    .rotate {
+        animation: rotate 2s infinite linear;
+    }
+
+    .scale {
+        animation: scale 1s infinite alternate;
+    }
+
+    .pulse {
+        animation: pulse 2s infinite;
+    }
+
+    .swing {
+        animation: swing 2s infinite;
+    }
+
+    .shake {
+        animation: shake 0.5s;
+        animation-iteration-count: 3;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideLeft {
+        from {
+            transform: translateX(-100%);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes bounce {
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40%,
+        60% {
+            transform: translateY(-20px);
+        }
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes scale {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(1.2);
+        }
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    @keyframes swing {
+        15% {
+            transform: rotate(15deg);
+        }
+
+        30% {
+            transform: rotate(-10deg);
+        }
+
+        50% {
+            transform: rotate(5deg);
+        }
+
+        65% {
+            transform: rotate(-5deg);
+        }
+
+        75% {
+            transform: rotate(2deg);
+        }
+
+        85% {
+            transform: rotate(-2deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes shake {
+
+        10%,
+        90% {
+            transform: translateX(-10px);
+        }
+
+        20%,
+        80% {
+            transform: translateX(10px);
+        }
+
+        30%,
+        50%,
+        70% {
+            transform: translateX(-7px);
+        }
+
+        40%,
+        60% {
+            transform: translateX(7px);
+        }
+    }
+
+    @keyframes flip {
+        from {
+            transform: rotateY(0deg);
+        }
+
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.8);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes zoomInFade {
+        from {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideLeft {
+        from {
+            transform: translateX(100%);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideRight {
+        from {
+            transform: translateX(-100%);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+
+    /* Media Queries */
+
+    /* Mobile Devices */
+    @media only screen and (max-width: 767px) {
+        .back-video {
+            width: auto;
+        }
+
+        #greeting-text {
+            font-size: 36px;
+        }
+
+        .typing-container {
+            font-size: 36px;
+            display: flex;
+            overflow: hidden;
+            word-break: break-word;
+            width: 80%;
+            height: 132px;
+            overflow: hidden;
+            white-space: pre-line;
+            margin-top: 16px;
+        }
+
+        #contact-logos-dashboard {
+            width: 100%;
+            height: 8%;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .contact-logo-dashboard {
+            height: 32px;
+            width: 32px;
+        }
+
+        #about-section {
+            height: 90dvh;
+            width: 90%;
+            overflow-y: scroll;
+            scrollbar-width: none;
+        }
+
+        #skills-section {
+            flex-direction: column;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            height: 90%;
+        }
+
+        .skills-section-card {
+            width: 90%;
+            min-height: 90%;
+            margin-bottom: 24px;
+        }
+
+        #contact-title {
+            height: 0;
+            margin-top: 48px;
+        }
+
+        #contact-message {
+            width: 90%;
+            height: 40%;
+            font-size: 20px;
+            margin-top: 36px;
+        }
+
+        #contact-logos {
+            width: 80%;
+            align-items: end;
+
+        }
+
+        .contact-logo {
+            width: 50px;
+            height: 50px;
+
+            img {
+                width: 50px;
+            }
+        }
+
+        #mobile-view-helper {
+            transform: rotate(90deg);
+            /* Rotate the div by 45 degrees */
+            transform-origin: center;
+            /* Optional: Adjust the point around which the div rotates */
+            transition: transform 0.5s;/
+        }
+
+        #exp-title {
+            transform: rotate(270deg);
+            transform-origin: center;
+            transition: transform 0.5s;
+            font-size: 32px;
+        }
+
+        #exp-nav-button {
+            display: none;
+        }
+
+        #experience-section {
+            height: 90%;
+            width: 100%;
+        }
+
+        .year-text-big,
+        .year-text-small,
+        .ssc,
+        .hsc,
+        .engineering,
+        #coditas-logo {
+            transform: rotate(-90deg);
+            transform-origin: center;
+            transition: transform 0.5s;
+        }
+
+        #timeline-bar-line {
+            width: 450%;
+        }
+
+        .engineering {
+            min-width: 0 !important;
+            margin-bottom: -120px;
+            margin-left: 416px !important;
+        }
+
+        .ssc {
+            margin-left: 386px !important;
+        }
+
+        #coditas-logo {
+            margin-left: 380px;
+
+            img {
+                width: 30dvw;
+            }
+
+            span {
+                text-align: center;
+                width: 200px;
+            }
+        }
+
+        .banner {
+            display: flex;
+            transform: rotate(-90deg);
+            transform-origin: center;
+            transition: transform 0.5s;
+        }
+
+        #ssc-banner {
+            margin-left: 560px;
+        }
+
+        #hsc-banner {
+            margin-left: 860px !important;
+        }
+
+        #engg-banner {
+            margin-left: 1425px !important;
+        }
+
+        #coditas-banner {
+            margin-left: 1900px !important;
+        }
+    }
+
+    /* Tablets */
+
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .back-video {
+            position: absolute;
+            z-index: -1;
+            width: auto;
+            height: 100dvh;
+        }
+
+        .typing-container,
+        #greeting-text {
+            font-size: 40px;
+        }
+
+        #mobile-view-helper {
+            transform: rotate(90deg);
+            /* Rotate the div by 45 degrees */
+            transform-origin: center;
+            /* Optional: Adjust the point around which the div rotates */
+            transition: transform 0.5s;/
+        }
+
+        #exp-title {
+            transform: rotate(270deg);
+            transform-origin: center;
+            transition: transform 0.5s;
+            font-size: 32px;
+            margin-left: 118px;
+        }
+
+        #exp-nav-button {
+            display: none;
+        }
+
+        #experience-section {
+            height: 90%;
+            width: 100%;
+        }
+
+        .year-text-big,
+        .year-text-small,
+        .ssc,
+        .hsc,
+        .engineering,
+        #coditas-logo {
+            transform: rotate(-90deg);
+            transform-origin: center;
+            transition: transform 0.5s;
+        }
+
+        #timeline-bar-line {
+            width: 220%;
+            margin-left: 436px;
+        }
+
+        .engineering {
+            min-width: 0 !important;
+            margin-bottom: -120px;
+            margin-left: 416px !important;
+        }
+
+        .ssc {
+            margin-left: 484px !important;
+        }
+
+        #coditas-logo {
+            margin-left: 380px;
+
+            img {
+                width: 30dvw;
+            }
+
+            span {
+                text-align: center;
+                width: 200px;
+            }
+        }
+
+        .banner {
+            display: flex;
+            transform: rotate(-90deg);
+            transform-origin: center;
+            transition: transform 0.5s;
+        }
+
+        #ssc-banner {
+            margin-left: 560px;
+        }
+
+        #hsc-banner {
+            margin-left: 860px !important;
+        }
+
+        #engg-banner {
+            margin-left: 1425px !important;
+        }
+
+        #coditas-banner {
+            margin-left: 1900px !important;
+        }
+
+        #skills-section {
+            flex-direction: row;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            /* height: 50%; */
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-section-card {
+            width: 47%;
+            height: 60% !important;
+            margin-bottom: 24px;
+        }
+
+        #contact-title {
+            height: 0;
+            margin-top: 48px;
+        }
+
+        #contact-message {
+            width: 90%;
+            height: 40%;
+            font-size: 24px;
+            margin-top: 36px;
+        }
+
+        #contact-logos {
+            width: 80%;
+            align-items: end;
+
+        }
+
+        .contact-logo {
+            width: 50px;
+            height: 50px;
+
+            img {
+                width: 50px;
+            }
+        }
+
+        #about-section-title {
+            overflow-y: scroll;
+            scrollbar-width: none;
+        }
+
+        #about-section-content {
+            font-size: 22px;
+            margin-top: 4%;
+        }
+
+        /* #about-section-content {
+            font-size: 22px;
+            margin-top: 4%;
+            overflow: scroll;
+            scrollbar-width: thin;
+            height: 70%;
+            padding-right: 30px;
+        } */
+    }
