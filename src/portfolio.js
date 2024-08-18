@@ -5,6 +5,10 @@ let currentText = "";
 let letter = "";
 let isDeleting = false;
 
+document.getElementById('downloadBtn').addEventListener('click', function() {
+    window.open('/RESOURCES/raman_adakurkar_8380844717.pdf', '_blank');
+});
+
 //Open Contact Links
 const myGithubUrl = "https://github.com/raman-adakurkar";
 const myYoutubeUrl = "https://www.youtube.com/channel/UCwtQkyrGX3SQot6UXqW1ydA";

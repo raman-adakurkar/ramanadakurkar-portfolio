@@ -14,6 +14,45 @@
         width: 100%;
     }
 
+    #downloadBtn{
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 25px;
+        height: 36px;
+        min-width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: white;
+
+        img{
+            width: 12px;
+        }
+    }
+
+    #downloadBtn:hover{
+        background-color: white;
+        border: none;
+        color: black;
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+
+        img{
+            content: url(/ASSETS/ICONS/download_black_icon.png);
+        }
+    }
+
+    #scrollDown{
+        display: flex;
+        width: 100px;
+        img{
+            width: 24px;
+        }
+
+    }
+
     .typing-container {
         font-family: 'Courier New', Courier, monospace;
         color: #BF00FF;
@@ -636,6 +675,7 @@
         align-items: center;
         justify-content: space-between;
         width: 18%;
+        gap: 10px;
     }
 
     .contact-logo-dashboard {
@@ -661,6 +701,10 @@
         animation: slideUp 1s ease-in-out;
     }
 
+    .slide-up-slow {
+        animation: slideUp 1.5s ease-in-out;
+    }
+
     .slide-down {
         animation: slideDown 1s ease-in-out;
     }
@@ -671,6 +715,14 @@
 
     .slide-right {
         animation: slideRight 1s ease-in-out;
+    }
+
+    .slide-right-fade {
+        animation: slideRightFade 1s ease-in-out;
+    }
+
+    .slide-right-slow {
+        animation: slideRight 3s ease-in-out;
     }
 
     .fade-out {
@@ -917,6 +969,18 @@
 
         to {
             transform: translateX(0);
+        }
+    }
+
+    @keyframes slideRightFade {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
         }
     }
 
