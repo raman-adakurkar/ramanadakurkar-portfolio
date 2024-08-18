@@ -14,7 +14,7 @@
         width: 100%;
     }
 
-    #downloadBtn{
+    #downloadBtn {
         background-color: transparent;
         border: 1px solid white;
         border-radius: 25px;
@@ -26,12 +26,12 @@
         gap: 8px;
         color: white;
 
-        img{
+        img {
             width: 12px;
         }
     }
 
-    #downloadBtn:hover{
+    #downloadBtn:hover {
         background-color: white;
         border: none;
         color: black;
@@ -39,15 +39,16 @@
         transform: scale(1.1);
         transition: transform 0.3s ease-in-out;
 
-        img{
+        img {
             content: url(/ASSETS/ICONS/download_black_icon.png);
         }
     }
 
-    #scrollDown{
+    #scrollDown {
         display: flex;
         width: 100px;
-        img{
+
+        img {
             width: 24px;
         }
 
@@ -445,19 +446,20 @@
     .banner {
         position: absolute;
         width: 300px;
-        height: 400px;
-        background: #1f1f1f;
+        height: 350px;
+        background: #ffffff00;
         border-radius: 25px;
-        margin-bottom: 64px;
+        margin-bottom: -2px;
         z-index: 2;
         display: flex;
         flex-direction: column;
-        box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.25);
+        box-shadow: 0px 0px 24px rgb(71 71 71 / 25%);
         border: 1px solid #ffffff36;
+        backdrop-filter: blur(6px);
     }
 
     .banner-image {
-        height: 40%;
+        height: 50%;
 
         img {
             width: 100%;
@@ -467,7 +469,7 @@
     }
 
     .banner-info {
-        height: 60%;
+        height: 50%;
         /* background: aliceblue; */
         color: white;
         display: flex;
@@ -477,7 +479,7 @@
     }
 
     .banner-title {
-        margin-top: 20px;
+        margin-top: 12px;
         font-weight: 700;
     }
 
@@ -496,14 +498,15 @@
     }
 
     .banner-timeline {
-        margin-top: 4px;
+        margin-top: 14px;
         font-size: 14px;
     }
 
     .banner-percentage {
-        margin-top: 36px;
-        font-size: 30px;
-        font-weight: 500;
+        margin-top: 8px;
+        font-size: 24px;
+        font-weight: 700;
+        color: #bf00ffcc;
     }
 
     #ssc-banner {
@@ -539,8 +542,10 @@
 
     .skills-section-card:hover {
         transform: scale(1.1);
-        box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.25);
-        border: 1px solid #ffffff36;
+        box-shadow: 0px 0px 100px rgb(150 150 150 / 25%);
+        border: 1px solid #393939e0;
+        background: transparent;
+        backdrop-filter: blur(4px);
     }
 
     .skills-header {
