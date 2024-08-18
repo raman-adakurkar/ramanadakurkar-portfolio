@@ -100,7 +100,7 @@
     .container {
         scroll-snap-type: y mandatory;
         overflow-y: scroll;
-        height: 100vh;
+        height: 100dvh;
         /* Ensure the container takes full viewport height */
     }
 
@@ -116,7 +116,7 @@
         justify-content: center;
         align-items: center;
         scroll-snap-align: start;
-        height: 100vh;
+        height: 100dvh;
         /* Each section takes full viewport height */
 
         .section-body {
